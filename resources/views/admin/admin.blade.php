@@ -61,7 +61,7 @@
                       <tr  align="center" admin_id="{{$v->admin_id}}" admin_name="{{$v->admin_name}}">
                       <td><input type="checkbox" class="box" name="id" value="1"></td>
                       <td>{{$v->admin_id}}</td>
-                      <td old="{{$v->admin_name}}"><span class="admin_name">{{$v->admin_name}}</span></td>
+                      <td><span class="admin_name">{{$v->admin_name}}</span></td>
 					 
                       <td>
 					   @if($v->admin_role==1)系统管理员@endif
