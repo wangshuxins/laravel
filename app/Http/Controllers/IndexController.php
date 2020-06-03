@@ -15,7 +15,8 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $salesman = Salesman::all();
+        return view('index/index',['salesman'=>$salesman]);
     }
 
     /**
@@ -25,7 +26,7 @@ class IndexController extends Controller
      */
     public function create()
     {
-        //
+        return view('index/create');
     }
 
     /**
@@ -36,7 +37,12 @@ class IndexController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = $request->except('_token');
+        //dd($post);
+        $res = Salesman::insert($post);
+        if($res){
+            return redirect('/');
+        }
     }
 
     /**
@@ -58,7 +64,9 @@ class IndexController extends Controller
      */
     public function edit($id)
     {
-        //
+        //echo $id;
+        $data = Salesman::find($id);
+        return view('index.edit',['data'=>$data]);
     }
 
     /**
@@ -70,7 +78,11 @@ class IndexController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = $request->except('_token');
+        $res = Salesman::where('sal_id',$id)->update($post);
+        if($res!==false){
+            return redirect('/');
+        }
     }
 
     /**
@@ -81,6 +93,10 @@ class IndexController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //echo $id;
+        $res = Salesman::destroy($id);
+        if($res){
+            return redirect('/');
+        }
     }
 }

@@ -18,6 +18,13 @@ Route::get('/', function () {
 });
 //首页
 Route::get('/','IndexController@index');
+Route::get('create','IndexController@create');
+Route::post('store','IndexController@store');
+Route::get('edit/{id}','IndexController@edit');
+Route::post('update/{id}','IndexController@update');
+Route::get('destroy/{id}','IndexController@destroy');
+
+
 //客户
 Route::get('/customer','CustomerController@index');
 //会议
