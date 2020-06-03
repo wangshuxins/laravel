@@ -7,6 +7,8 @@
   <title>layout 微商城 - @yield('title')</title>
   <link rel="stylesheet" href="/static/layui/css/layui.css">
 </head>
+ <script type="text/javascript" src="/static/javascript/jquery.min.js"></script>
+ <meta name='csrf-token' content="{{csrf_token()}}">
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
   <div class="layui-header">
@@ -73,10 +75,10 @@
 	
 
 	   <!-- 底部固定区域 -->
-    © layui.com - 底部固定区域
+    <!-- © layui.com - 底部固定区域 -->
   </div>
 </div>
-    <script type="text/javascript" src="/static/javascript/jquery.min.js"></script>
+   
     <script type="text/javascript" src="/static/layui/layui.js"></script>
     <script type="text/javascript" src="/static/javascript/login.js"></script>
 </body>
